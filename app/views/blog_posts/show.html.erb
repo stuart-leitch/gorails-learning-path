@@ -1,5 +1,7 @@
 <h1><%= @blog_post.title %></h1>
 <div><%= @blog_post.body %></div>
 
-<hr><a href="/">Home</a>
-<%= link_to "Edit", :edit_blog_post %>
+<% if user_signed_in? %>
+  <br>
+  <%= link_to "Edit", edit_blog_post_path %>
+<% end %>
